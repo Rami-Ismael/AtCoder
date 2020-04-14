@@ -1,0 +1,4 @@
+//the dimension will be the  the max possible weight
+//the dimesnio is swap
+//set the whole array is max value of interger
+//
