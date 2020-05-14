@@ -1,0 +1,25 @@
+double [] coins = new double[N];
+        for(int i=0;i<coins.length;i++)
+        coins[i] = ms.nextDouble();
+        double [][] dp = new double[N+1][N+1];
+        dp[0][0] =1;
+        double sum =0;
+        for(int i=1;i<=N;i++)
+        dp[0][i] = 0;
+        int mid = N/2;
+        for(int i=1;i<=N;i++){
+            for(int col=0;col<=N;col++){
+                if(col==0){
+                    dp[i][col] = dp[i-1][col]*(1-coins[i-1]);
+                }else {
+                    //to go hte top left get the value of desciding not and acino doin 
+                    //adnd up to fligign the i-1 coin to get head and it own not to do 
+                    dp[i][col] = (dp[i-1][col-1]*(coins[i-1]))
+                    +(dp[i-1][col]*(1-coins[i-1]));
+                    if(i==N&&col>mid)
+                    sum+=dp[i][col];
+                    
+                }
+            }
+        }
+       pw.println(sum);
